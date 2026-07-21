@@ -1,0 +1,120 @@
+{
+    "Background": {
+        "precision": 0.8421543811204009,
+        "recall": 0.6796562254962651,
+        "f1-score": 0.7522295684743014,
+        "support": 96924.0,
+        "iou": 0.60285894702157
+    },
+    "Meadow": {
+        "precision": 0.6645130376988114,
+        "recall": 0.790890192976324,
+        "f1-score": 0.7222147560811719,
+        "support": 54359.0,
+        "iou": 0.5652082456877675
+    },
+    "Soft Winter Wheat": {
+        "precision": 0.5847059523101623,
+        "recall": 0.8335876568328247,
+        "f1-score": 0.6873099640023765,
+        "support": 35388.0,
+        "iou": 0.5235889243875536
+    },
+    "Corn": {
+        "precision": 0.5737076498111505,
+        "recall": 0.6456463124504361,
+        "f1-score": 0.6075548856021372,
+        "support": 31525.0,
+        "iou": 0.4363223220218148
+    },
+    "Winter Barley": {
+        "precision": 0.7581699346405228,
+        "recall": 0.1772495755517827,
+        "f1-score": 0.28732626943718176,
+        "support": 11780.0,
+        "iou": 0.16776474369261787
+    },
+    "Winter Rapeseed": {
+        "precision": 0.7935651271406331,
+        "recall": 0.8825023084025854,
+        "f1-score": 0.8356740805508498,
+        "support": 17328.0,
+        "iou": 0.7177320942454155
+    },
+    "Spring Barley": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 153.0,
+        "iou": 0.0
+    },
+    "Sunflower": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2851.0,
+        "iou": 0.0
+    },
+    "Winter Triticale": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1612.0,
+        "iou": 0.0
+    },
+    "Winter Durum Wheat": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 306.0,
+        "iou": 0.0
+    },
+    "Fruits/Vegetables/Flowers": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2643.0,
+        "iou": 0.0
+    },
+    "Leguminous Fodder": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1778.0,
+        "iou": 0.0
+    },
+    "Soybeans": {
+        "precision": 0.5302740903447617,
+        "recall": 0.8030807058142898,
+        "f1-score": 0.638769053781996,
+        "support": 13828.0,
+        "iou": 0.4692583984785678
+    },
+    "Mixed Cereal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 674.0,
+        "iou": 0.0
+    },
+    "Sorghum": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 665.0,
+        "iou": 0.0
+    },
+    "accuracy": 0.6887246425864746,
+    "macro avg": {
+        "precision": 0.31647267820442954,
+        "recall": 0.3208408651683005,
+        "f1-score": 0.30207190519533433,
+        "support": 271814.0
+    },
+    "weighted avg": {
+        "precision": 0.6862770564690472,
+        "recall": 0.6887246425864746,
+        "f1-score": 0.6708330909842601,
+        "support": 271814.0
+    }
+}

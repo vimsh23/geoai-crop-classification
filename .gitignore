@@ -1,0 +1,21 @@
+# Environments
+venv/
+env/
+.env
+
+# Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Data and Outputs (usually ignored to avoid huge commits)
+data/
+outputs/
+
+# Models (Weights are hosted externally to prevent repository bloat)
+models/
+
+# OS specific
+.DS_Store
+Thumbs.db

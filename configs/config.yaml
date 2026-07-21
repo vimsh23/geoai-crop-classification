@@ -1,0 +1,83 @@
+# Paths
+paths:
+  data_dir: "data/PASTIS_subset"
+  s2_dir: "data/PASTIS_subset/DATA_S2"
+  annotations_dir: "data/PASTIS_subset/ANNOTATIONS"
+  metadata: "data/PASTIS_subset/metadata.geojson"
+  output_dir: "outputs"
+  model_dir: "models"
+  splits_dir: "splits"
+
+# Dataset
+dataset:
+  bands: ["B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12"]
+  n_bands: 10
+  patch_size: 128
+  n_dates: 46
+  crs: "EPSG:2154"
+
+# Class nomenclature
+classes:
+  0: "Background"
+  1: "Meadow"
+  2: "Soft Winter Wheat"
+  3: "Corn"
+  4: "Winter Barley"
+  5: "Winter Rapeseed"
+  6: "Spring Barley"
+  7: "Sunflower"
+  8: "Grapevine"
+  9: "Beet"
+  10: "Winter Triticale"
+  11: "Winter Durum Wheat"
+  12: "Fruits/Vegetables/Flowers"
+  13: "Potatoes"
+  14: "Leguminous Fodder"
+  15: "Soybeans"
+  16: "Orchard"
+  17: "Mixed Cereal"
+  18: "Sorghum"
+  19: "Void"
+  
+ignore_classes: [19]   # Exclude from training and metrics
+
+# Split
+split:
+  strategy: "fold_based"
+  train_folds: [1, 2, 3]
+  val_folds: [4]
+  test_folds: [5]
+
+# Models
+models:
+  random_forest:
+    n_estimators: 100
+    max_depth: 20
+    class_weight: "balanced"
+    random_state: 42
+    n_jobs: -1
+  unet:
+    in_channels: 10 # or more depending on temporal aggregation
+    num_classes: 20
+    learning_rate: 0.001
+    batch_size: 16
+    epochs: 20
+
+# Preprocessing
+preprocessing:
+  normalization: "standardize"
+  clip_negatives: true
+  spectral_indices: ["NDVI", "NDWI"]
+  temporal_aggregation: ["mean", "std", "min", "max", "median"]
+
+# Visualization
+visualization:
+  dpi: 150
+  figsize: [12, 8]
+  colormap: "tab20"
+
+# Agent (optional)
+agent:
+  llm_provider: "ollama" # ollama, groq, gemini
+  llm_model: "qwen2.5" # specific model name
+  temperature: 0.1
