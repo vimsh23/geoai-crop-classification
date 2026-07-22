@@ -80,14 +80,17 @@ jupyter notebook notebooks/ultimate_geoai_eda.ipynb
 #### Step B: Train Models from Scratch
 If you wish to train the models entirely from scratch using the `.npy` arrays, execute the training script. The script automatically handles data loading, temporal feature engineering, and model training.
 
-**Train Random Forest Baseline:**
+**Train Classical ML Models:**
 ```bash
 python -m src.train --model rf
+python -m src.train --model lgbm
 ```
+
 **Train Deep Learning Models (Requires GPU):**
 ```bash
+python -m src.train --model unet
 python -m src.train --model resunet
-# Other available models: unet, transunet
+python -m src.train --model transunet
 ```
 
 #### Step C: Evaluate and Publish Results
@@ -103,6 +106,8 @@ streamlit run app/streamlit_app.py
 
 ### 5. Convert to GeoTIFF and Generate Slides
 To export all predictions (with OBIA smoothing for ML models and pure raw outputs for DL models) and generate comparison slides:
+*Note: If you want to generate the final comparison slides perfectly without any blank sections, you must first run all predictions, including the Cloud-Free RF experiment in Section 6 below.*
+
 ```bash
 python tools/export_predictions_geotiff.py --obia
 python tools/generate_slide.py
@@ -155,12 +160,15 @@ streamlit run app/streamlit_app.py
 *(Note: Refer to Section 3 above if you need to retrain the models from scratch).*
 
 #### 6. Generate Cloud-Free Data and Train RF (Experiment)
-To improve Random Forest performance by mitigating cloud cover, you can generate a cloud-free version of the dataset and train a specialized model:
+To test the impact of atmospheric noise, you can generate a cloud-free dataset and train a specialized model. 
 
 ```bash
-# 1. Generate cloud-free dataset (applies temporal interpolation)
+# 1. Generate cloud-free dataset
 python -m src.preprocessing_cloud_removal
 
 # 2. Train the Cloud-Free Random Forest
 python tools/train_rf_cloud_free.py
+
+# 3. Export Predictions to GeoTIFF
+python tools/export_predictions_geotiff.py --obia
 ```
